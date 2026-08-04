@@ -58,6 +58,23 @@ The primary goals of this project are:
 * Tailscale
 * Homepage
 * Uptime Kuma
+## Current Progress
+
+### Raspberry Pi (Lab-Pi01)
+- Raspberry Pi OS Lite (64-bit) installed.
+- Booting successfully from NVMe SSD.
+- SSH configured and verified.
+- Hostname: `lab-pi01`
+- Remote management working.
+
+### Docker
+- Docker Engine installed.
+- Docker verified with `hello-world`.
+- Basic Docker commands learned:
+  - `docker ps`
+  - `docker ps -a`
+  - `docker images`
+  - `docker rm`
 
 ---
 
@@ -65,6 +82,7 @@ The primary goals of this project are:
 
 * [x] Plan hardware
 * [x] Select networking equipment
+* [x] Prepare Raspberry Pi
 * [ ] Purchase MS-01
 * [ ] Install Proxmox
 * [ ] Configure networking
