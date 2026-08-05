@@ -17,10 +17,13 @@ Boot Device:
 
 ## Installed Software
 
-### System
-
-- Docker
+- Docker Engine
 - Docker Compose
+- Portainer
+- Homepage
+- Nginx Proxy Manager
+- Pi-hole
+- Uptime Kuma
 - Git
 - Curl
 - Wget
@@ -30,29 +33,40 @@ Boot Device:
 - unzip
 - dnsutils
 
-### Services
+## Network Services
 
-- Homepage
-- Portainer
-- Uptime Kuma
-- Nginx Proxy Manager
+| Service | URL |
+|---------|-----|
+| Homepage | https://homepage.home.arpa |
+| Portainer | https://portainer.home.arpa |
+| Nginx Proxy Manager | https://npm.home.arpa |
+| Uptime Kuma | https://uptime.home.arpa |
+| Pi-hole | https://pihole.home.arpa |
 
-## Project Structure
+## DNS
 
-```text
-/srv
-├── homepage
-├── nginx-proxy-manager
-├── portainer
-└── uptime-kuma
-```
+Pi-hole provides internal DNS for the homelab using the `home.arpa` domain.
 
-## Proxy Hosts
+Configured DNS records include:
 
 - homepage.home.arpa
 - portainer.home.arpa
-- uptime.home.arpa
 - npm.home.arpa
+- uptime.home.arpa
+- pihole.home.arpa
+
+## Reverse Proxy
+
+Nginx Proxy Manager provides reverse proxy services for all hosted applications using friendly internal hostnames.
+
+## SSL
+
+- Private Root Certificate Authority (CA)
+- Root CA trusted by Windows
+- Wildcard certificate (`*.home.arpa`)
+- HTTPS enabled for all services
+- HTTP/2 enabled
+- No browser certificate warnings
 
 ## Verified
 
@@ -60,14 +74,7 @@ Boot Device:
 - Internet connectivity
 - Docker Engine
 - Docker Compose
-- Homepage running
-- Portainer running
-- Uptime Kuma running
-- Nginx Proxy Manager running
-
-## Next Steps
-
-- Install Pi-hole
-- Configure local DNS
-- Connect DNS with Nginx Proxy Manager
-- Access services using `.home.arpa` hostnames
+- Internal DNS resolution
+- Reverse proxy
+- HTTPS on all services
+- Trusted wildcard certificate
