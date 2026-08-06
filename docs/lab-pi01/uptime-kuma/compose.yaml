@@ -1,0 +1,24 @@
+# ============================================================
+# Lab-Pi01 - Uptime Kuma
+#
+# Purpose:
+#   Deploys Uptime Kuma to monitor the availability and
+#   response time of homelab services.
+#
+# Documentation:
+#   https://github.com/louislam/uptime-kuma
+# ============================================================
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+
+    ports:
+      - "3001:3001"   # Web Interface
+
+    volumes:
+      # Persistent monitoring data
+      - ./data:/app/data
+
+    restart: unless-stopped
