@@ -1,0 +1,23 @@
+# ============================================================
+# Lab-Pi01 - Homepage Widgets
+#
+# Purpose:
+#   Configures informational widgets displayed on the Homepage
+#   dashboard.
+#
+# Documentation:
+#   https://gethomepage.dev/configs/info-widgets/
+# ============================================================
+
+---
+
+# Display system resource usage.
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+# Homepage search widget.
+- search:
+    provider: duckduckgo
+    target: _blank
