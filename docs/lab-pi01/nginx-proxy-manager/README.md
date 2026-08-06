@@ -1,27 +1,64 @@
 # Nginx Proxy Manager
 
+**Status:** ✅ Production  
+**Version:** Latest  
+**Last Updated:** 2026-08-05
+
+---
+
 ## Purpose
 
-Provides reverse proxy services for all internal web applications.
+Nginx Proxy Manager provides reverse proxy services and HTTPS for internal homelab applications.
 
 ## Features
 
-- Friendly hostnames
-- HTTPS
 - Reverse proxy
-- Wildcard SSL certificate
+- SSL certificate management
+- HTTP to HTTPS redirection
+- HTTP/2 support
 
-## Proxy Hosts
+## Configuration Files
+
+- compose.yaml
+- proxy-hosts.md
+- ssl.md
+
+## Managed Services
 
 - Homepage
 - Portainer
 - Pi-hole
 - Uptime Kuma
 
-## SSL
-
-A private Root CA and wildcard certificate secure all hosted services.
-
 ## Access
 
 https://npm.home.arpa
+
+## Notes
+
+All services are secured using a wildcard certificate issued by the homelab Root Certificate Authority.
+
+---
+
+## Change History
+
+### 2026-08-05
+
+#### Added
+
+- Wildcard SSL certificate.
+
+#### Changed
+
+- All proxy hosts migrated to HTTPS.
+
+#### Fixed
+
+- Certificate validation.
+- HTTPS configuration.
+
+### 2026-07-28
+
+#### Added
+
+- Initial Nginx Proxy Manager deployment.
