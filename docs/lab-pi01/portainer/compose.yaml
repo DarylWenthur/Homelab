@@ -1,0 +1,31 @@
+# ============================================================
+# Lab-Pi01 - Portainer
+#
+# Purpose:
+#   Deploys Portainer Community Edition for Docker management.
+#
+# Documentation:
+#   https://www.portainer.io/
+# ============================================================
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+
+    ports:
+      - "8000:8000"   # Edge Agent
+      - "9443:9443"   # HTTPS Web Interface
+
+    volumes:
+      # Docker socket
+      - /var/run/docker.sock:/var/run/docker.sock
+
+      # Persistent Portainer data
+      - portainer_data:/data
+
+    restart: always
+
+volumes:
+  portainer_data:
+    external: true
