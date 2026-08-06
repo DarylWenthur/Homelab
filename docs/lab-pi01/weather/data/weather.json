@@ -1,0 +1,120 @@
+[
+    {
+        "macAddress": "C4:5B:BE:5E:64:B7",
+        "lastData": {
+            "dateutc": 1785990900000,
+            "tempinf": 73.6,
+            "humidityin": 61,
+            "baromrelin": 29.38,
+            "baromabsin": 29.38,
+            "tempf": 64.8,
+            "humidity": 89,
+            "winddir": 111,
+            "winddir_avg10m": 111,
+            "windspeedmph": 0,
+            "windspdmph_avg10m": 0,
+            "windgustmph": 0,
+            "maxdailygust": 0,
+            "hourlyrainin": 0,
+            "eventrainin": 0,
+            "dailyrainin": 0,
+            "weeklyrainin": 0.01,
+            "monthlyrainin": 0.01,
+            "yearlyrainin": 66.64,
+            "solarradiation": 0,
+            "uv": 0,
+            "temp1f": 76.6,
+            "humidity1": 61,
+            "feelsLike": 64.8,
+            "dewPoint": 61.48,
+            "feelsLike1": 76.8,
+            "dewPoint1": 62.1,
+            "feelsLikein": 73.5,
+            "dewPointin": 59.3,
+            "lastRain": "2023-08-23T12:33:00.000Z",
+            "tz": "America/Los_Angeles",
+            "date": "2026-08-06T04:35:00.000Z"
+        },
+        "info": {
+            "name": "My Weather Station",
+            "coords": {
+                "coords": {
+                    "lat": 47.9212,
+                    "lon": -121.9651
+                },
+                "address": "19812 Meadow Lake Rd, Snohomish, WA 98290, USA",
+                "location": "Snohomish",
+                "elevation": 170.2357025146484,
+                "address_components": [
+                    {
+                        "long_name": "19812",
+                        "short_name": "19812",
+                        "types": [
+                            "street_number"
+                        ]
+                    },
+                    {
+                        "long_name": "Meadow Lake Road",
+                        "short_name": "Meadow Lake Rd",
+                        "types": [
+                            "route"
+                        ]
+                    },
+                    {
+                        "long_name": "Snohomish",
+                        "short_name": "Snohomish",
+                        "types": [
+                            "locality",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Snohomish County",
+                        "short_name": "Snohomish County",
+                        "types": [
+                            "administrative_area_level_2",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Washington",
+                        "short_name": "WA",
+                        "types": [
+                            "administrative_area_level_1",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "United States",
+                        "short_name": "US",
+                        "types": [
+                            "country",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "98290",
+                        "short_name": "98290",
+                        "types": [
+                            "postal_code"
+                        ]
+                    },
+                    {
+                        "long_name": "7275",
+                        "short_name": "7275",
+                        "types": [
+                            "postal_code_suffix"
+                        ]
+                    }
+                ],
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        -121.9651,
+                        47.9212
+                    ]
+                }
+            }
+        }
+    }
+]
