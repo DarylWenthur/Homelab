@@ -1,0 +1,50 @@
+# ============================================================
+# Lab-Pi01 - Homepage Services
+#
+# Purpose:
+#   Defines the services displayed on the Homepage dashboard.
+#
+# Documentation:
+#   https://gethomepage.dev/configs/services/
+# ============================================================
+
+---
+
+- Infrastructure:
+    - Homepage:
+        icon: homepage.png
+        href: https://homepage.home.arpa
+        description: Homelab Dashboard
+
+    - Portainer:
+        icon: portainer.png
+        href: https://portainer.home.arpa
+        description: Docker Management
+        server: my-docker
+        container: portainer
+
+    - Pi-hole:
+        icon: pi-hole.png
+        href: https://pihole.home.arpa/admin/
+        description: DNS Ad Blocking
+
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: https://npm.home.arpa
+        description: Reverse Proxy
+
+- Monitoring:
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: https://uptime.home.arpa
+        description: Service Monitoring
+        server: my-docker
+        container: uptime-kuma
+
+- Networking: []
+
+- Storage: []
+
+- Development: []
+
+- Automation: []
