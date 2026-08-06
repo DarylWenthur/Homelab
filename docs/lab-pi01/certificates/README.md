@@ -1,21 +1,44 @@
 # Certificates
 
+**Status:** ✅ Production  
+**Version:** 1.0  
+**Last Updated:** 2026-08-05
+
+---
+
 ## Purpose
 
-Provides HTTPS for all internal services using a private Certificate Authority.
+Provides trusted HTTPS certificates for all internal homelab services.
 
 ## Components
 
-- Root Certificate Authority
-- Wildcard certificate
-- Nginx Proxy Manager integration
+- Private Root Certificate Authority (CA)
+- Wildcard SSL certificate (`*.home.arpa`)
 
-## Certificate Coverage
+## Documentation
 
-*.home.arpa
+- ca-overview.md
+- wildcard-certificate.md
 
 ## Notes
 
-The Root CA is trusted by client devices.
-
 Private keys are never stored in this repository.
+
+---
+
+## Change History
+
+### 2026-08-05
+
+#### Added
+
+- Root Certificate Authority.
+- Wildcard SSL certificate.
+
+#### Changed
+
+- All services migrated to HTTPS.
+
+#### Fixed
+
+- Subject Alternative Name (SAN) configuration.
