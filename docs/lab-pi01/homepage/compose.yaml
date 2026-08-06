@@ -1,0 +1,33 @@
+# ============================================================
+# Lab-Pi01 - Homepage
+# Docker Compose Configuration
+#
+# Purpose:
+#   Deploys the Homepage dashboard for the homelab.
+#
+# Notes:
+#   - Homepage integrates with the local Docker socket.
+#   - HOMEPAGE_ALLOWED_HOSTS prevents host validation errors.
+#   - See README.md for deployment and configuration details.
+# ============================================================
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+
+    environment:
+      # Allowed hostnames and IP addresses
+      HOMEPAGE_ALLOWED_HOSTS: homepage.home.arpa,192.168.1.250,192.168.1.250:3000
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      # Homepage configuration
+      - ./config:/app/config
+
+      # Read-only Docker socket for container widgets
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    restart: unless-stopped
