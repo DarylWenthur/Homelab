@@ -1,7 +1,7 @@
 #!/bin/bash
 
-API_KEY="2b054d97142a48ffa6d1b91755205d0c829b2fe5a9c4474692ed0cd358f1b27b"
-APP_KEY="66fd10b2dac54ba5a2c41039f1ee1d80a509c62993414b0d81aaae99a9c9bb3e"
+API_KEY=""
+APP_KEY=""
 
 curl -s "https://api.ambientweather.net/v1/devices?applicationKey=${APP_KEY}&apiKey=${API_KEY}" | python3 -c '
 import json
