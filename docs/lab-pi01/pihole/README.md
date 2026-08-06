@@ -1,27 +1,57 @@
 # Pi-hole
 
+**Status:** ✅ Production  
+**Version:** Latest  
+**Last Updated:** 2026-08-05
+
+---
+
 ## Purpose
 
-Provides internal DNS resolution and network-wide ad blocking.
+Pi-hole provides internal DNS resolution and network-wide ad blocking for the homelab.
 
-## Responsibilities
+## Features
 
 - Local DNS
+- DNS filtering
 - Ad blocking
 - Internal hostname resolution
 
-## Local Domain
+## Configuration Files
 
-home.arpa
-
-## Hosted Records
-
-- homepage.home.arpa
-- portainer.home.arpa
-- npm.home.arpa
-- uptime.home.arpa
-- pihole.home.arpa
+- compose.yaml
+- dns-records.md
+- blocklists.md
 
 ## Access
 
-https://pihole.home.arpa
+https://pihole.home.arpa/admin
+
+## Notes
+
+Pi-hole hosts the DNS records used by Homepage and Nginx Proxy Manager.
+
+---
+
+## Change History
+
+### 2026-08-05
+
+#### Added
+
+- HTTPS support.
+- Internal DNS records for hosted services.
+
+#### Changed
+
+- Published through Nginx Proxy Manager.
+
+#### Fixed
+
+- DNS resolution for internal services.
+
+### 2026-07-28
+
+#### Added
+
+- Initial Pi-hole deployment.
