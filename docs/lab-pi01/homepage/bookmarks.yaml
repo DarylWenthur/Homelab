@@ -1,0 +1,26 @@
+# ============================================================
+# Lab-Pi01 - Homepage Bookmarks
+#
+# Purpose:
+#   Defines bookmark groups displayed on the Homepage dashboard.
+#
+# Documentation:
+#   https://gethomepage.dev/configs/bookmarks/
+# ============================================================
+
+---
+
+- Developer:
+    - GitHub:
+        - abbr: GH
+          href: https://github.com/
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
