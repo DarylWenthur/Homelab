@@ -1,0 +1,18 @@
+# ============================================================
+# Lab-Pi01 - Homepage Settings
+#
+# Purpose:
+#   Global configuration for Homepage.
+#
+# Notes:
+#   - API keys have been replaced with placeholders.
+#   - Additional providers can be configured as needed.
+# ============================================================
+
+---
+# For configuration options and examples, see:
+# https://gethomepage.dev/configs/settings/
+
+providers:
+  openweathermap: <OPENWEATHERMAP_API_KEY>
+  weatherapi: <WEATHERAPI_API_KEY>
