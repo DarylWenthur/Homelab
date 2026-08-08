@@ -2,9 +2,13 @@
 
 ## Hardware
 
-- Raspberry Pi
+- Raspberry Pi 5 (8GB)
 - NVMe SSD boot drive
 - Raspberry Pi OS Lite (64-bit)
+- PNY 32GB USB backup drive
+  - Label: `Lab_Backups`
+  - Filesystem: exFAT
+  - UUID: `987E-4EEF`
 
 ## Configuration
 
@@ -13,7 +17,14 @@ Hostname: `lab-pi01`
 SSH: Enabled
 
 Boot Device:
+
 - NVMe SSD (`/dev/nvme0n1p2`)
+
+Backup Mount:
+
+- `/srv/backups`
+- Backup drive is normally unmounted
+- Automatically mounted during scheduled backups
 
 ## Installed Software
 
@@ -35,17 +46,19 @@ Boot Device:
 
 ## Network Services
 
-| Service | URL |
-|---------|-----|
-| Homepage | https://homepage.home.arpa |
-| Portainer | https://portainer.home.arpa |
-| Nginx Proxy Manager | https://npm.home.arpa |
-| Uptime Kuma | https://uptime.home.arpa |
-| Pi-hole | https://pihole.home.arpa |
+| Service             | URL                                                        |
+| ------------------- | ---------------------------------------------------------- |
+| Homepage            | [https://homepage.home.arpa](https://homepage.home.arpa)   |
+| Portainer           | [https://portainer.home.arpa](https://portainer.home.arpa) |
+| Nginx Proxy Manager | [https://npm.home.arpa](https://npm.home.arpa)             |
+| Uptime Kuma         | [https://uptime.home.arpa](https://uptime.home.arpa)       |
+| Pi-hole             | [https://pihole.home.arpa](https://pihole.home.arpa)       |
 
 ## DNS
 
 Pi-hole provides internal DNS for the homelab using the `home.arpa` domain.
+
+The Pi itself uses Pi-hole (`192.168.1.250`) as its DNS server.
 
 Configured DNS records include:
 
@@ -55,26 +68,30 @@ Configured DNS records include:
 - uptime.home.arpa
 - pihole.home.arpa
 
+Verified:
+
+- `npm.home.arpa` → `192.168.1.250`
+- `pihole.home.arpa` → `192.168.1.250`
+- Internet DNS resolution
+
 ## Reverse Proxy
 
-Nginx Proxy Manager provides reverse proxy services for all hosted applications using friendly internal hostnames.
+Nginx Proxy Manager provides reverse proxy services for hosted applications using friendly internal hostnames.
 
 ## SSL
 
 - Private Root Certificate Authority (CA)
 - Root CA trusted by Windows
 - Wildcard certificate (`*.home.arpa`)
-- HTTPS enabled for all services
+- HTTPS enabled for hosted services
 - HTTP/2 enabled
 - No browser certificate warnings
 
-## Verified
+## Backup System
 
-- SSH access
-- Internet connectivity
-- Docker Engine
-- Docker Compose
-- Internal DNS resolution
-- Reverse proxy
-- HTTPS on all services
-- Trusted wildcard certificate
+Backups are stored on the dedicated PNY USB drive.
+
+Backup location:
+
+```text
+/srv/backups/Backups/lab-pi01/

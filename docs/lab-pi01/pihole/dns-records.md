@@ -2,14 +2,17 @@
 
 Pi-hole provides local DNS resolution for internal services.
 
-| Hostname |
-|----------|
-| homepage.home.arpa |
-| portainer.home.arpa |
-| npm.home.arpa |
-| uptime.home.arpa |
-| pihole.home.arpa |
+| Hostname            | IP Address    |
+| ------------------- | ------------- |
+| homepage.home.arpa  | 192.168.1.250 |
+| portainer.home.arpa | 192.168.1.250 |
+| npm.home.arpa       | 192.168.1.250 |
+| uptime.home.arpa    | 192.168.1.250 |
+| pihole.home.arpa    | 192.168.1.250 |
 
-## Notes
+## Pi DNS Configuration
 
-Additional records can be added as new services are deployed.
+`lab-pi01` uses Pi-hole as its DNS server:
+
+```text
+nameserver 192.168.1.250

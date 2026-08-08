@@ -2,7 +2,7 @@
 
 **Status:** ✅ Production  
 **Version:** Latest  
-**Last Updated:** 2026-08-05
+**Last Updated:** 2026-08-07
 
 ---
 
@@ -17,21 +17,44 @@ Uptime Kuma monitors the availability and response time of homelab services.
 - Status dashboard
 - Response time tracking
 
+## Current Monitors
+
+- Homepage
+- Portainer
+- Nginx Proxy Manager
+- Pi-hole
+
+All current monitors are reporting **UP**.
+
 ## Configuration Files
 
 - compose.yaml
 
 ## Access
 
-https://uptime.home.arpa
+[https://uptime.home.arpa](https://uptime.home.arpa)
 
 ## Notes
 
-All monitored services use HTTPS.
+All monitored services use the homelab `home.arpa` infrastructure.
 
 ---
 
 ## Change History
+
+### 2026-08-07
+
+#### Added
+
+- Nginx Proxy Manager monitoring.
+- Pi-hole monitoring.
+
+#### Verified
+
+- Homepage monitor operational.
+- Portainer monitor operational.
+- Nginx Proxy Manager monitor operational.
+- Pi-hole monitor operational.
 
 ### 2026-08-05
 

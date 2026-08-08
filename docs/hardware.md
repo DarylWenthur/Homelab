@@ -21,9 +21,13 @@
 
 ### Raspberry Pi
 
-* Raspberry Pi 5 (8GB)
-* M.2 SSD HAT
-* SSD installed
+- Raspberry Pi 5 (8GB)
+- M.2 SSD HAT
+- SSD installed
+- PNY 32GB USB backup drive
+  - Label: `Lab_Backups`
+  - Filesystem: exFAT
+  - UUID: `987E-4EEF`
 
 Current services:
 
