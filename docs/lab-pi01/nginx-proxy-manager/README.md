@@ -95,3 +95,8 @@ All services are routed through `home.arpa` internal DNS.
 ### Previous
 
 - Initial NPM setup and service routing
+
+## Logs
+
+- Log path: /srv/nginx-proxy-manager/data/logs/
+- Used for monitoring and fail2ban integration
