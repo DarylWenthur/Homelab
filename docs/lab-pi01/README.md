@@ -95,3 +95,15 @@ Backup location:
 
 ```text
 /srv/backups/Backups/lab-pi01/
+
+## Security
+
+- UFW enabled
+  - Allowed ports: 22, 80, 443, 5055
+
+- fail2ban enabled
+  - Active jail: sshd
+
+## Backup Service
+
+- API endpoint active on port 5055
