@@ -87,3 +87,82 @@ docker/homepage/
 
 - GitHub contains **clean versions**, not raw system state  
 - Live system may contain temporary or runtime data not stored in GitHub 
+
+## Repository Structure
+
+### Overview
+
+The repository is organized to reflect a clean, rebuildable homelab configuration.
+
+---
+
+### Top-Level Layout
+
+
+Homelab/
+├── docs/
+├── docker/
+├── scripts/
+├── services/
+
+
+---
+
+### Directory Breakdown
+
+#### docs/
+
+Documentation for all systems, organized by service and function.
+
+---
+
+#### docker/
+
+Docker-based services and configurations.
+
+
+docker/
+├── homepage/
+├── nginx-proxy-manager/
+├── pihole/
+├── portainer/
+├── uptime-kuma/
+
+
+Each service contains:
+- `compose.yaml`
+- service-specific configuration files (if applicable)
+
+---
+
+#### scripts/
+
+Automation and operational scripts.
+
+- Backup scripts
+- Maintenance scripts
+
+---
+
+#### services/
+
+Custom services and APIs.
+
+- Backup API (`backup_service.py`)
+- Weather service (custom Python application)
+
+---
+
+### Design Principles
+
+- Clear separation of concerns
+- Rebuildable from repository
+- No runtime or generated files stored
+- All critical configuration tracked in Git
+
+---
+
+### Notes
+
+- Live system paths (`/srv/...`) are mapped into this structure
+- Repository reflects **clean configuration**, not raw system state
