@@ -1,63 +1,107 @@
 # Homepage
 
 **Status:** ✅ Production  
-**Version:** Latest  
-**Last Updated:** 2026-08-05
+**Last Updated:** 2026-08-10  
 
 ---
 
 ## Purpose
 
-Homepage provides a centralized dashboard for accessing homelab services from a single web interface.
+Homepage provides a centralized dashboard for homelab services and system status.
+
+---
 
 ## Features
 
 - Service dashboard
-- Docker integration
-- System widgets
-- Bookmarks
-- Custom service icons
+- Custom API widgets
+- Docker service visibility
+- Clean UI for lab monitoring
+
+---
+
+## Services Displayed
+
+- Portainer
+- Nginx Proxy Manager
+- Pi-hole
+- Uptime Kuma
+- Backup Status
+
+---
+
+## Backup Status Widget
+
+### Endpoint
+http://192.168.1.250:5055/api
+
+---
+
+### Display
+
+- Status (🟢 / 🟡 / 🔴)
+- Timestamp of last backup
+
+---
+
+### Configuration
+widget:
+type: customapi
+url: http://192.168.1.250:5055/api
+refreshInterval: 10000
+method: GET
+display: block
+mappings:
+- field: status
+label: ""
+- field: time
+label: ""
+
+---
+
+### Behavior
+
+| Status | Meaning |
+|--------|--------|
+| 🟢 SUCCESS | Backup completed within 8 days |
+| 🟡 STALE | Backup older than 8 days |
+| 🔴 FAILED | Backup failed |
+
+---
+
+### Notes
+
+- Labels intentionally removed for cleaner display
+- Refresh interval set to 10 seconds
+- Uses local API service running on port 5055
+
+---
 
 ## Configuration Files
 
 - compose.yaml
 - services.yaml
-- widgets.yaml
-- bookmarks.yaml
-- docker.yaml
+
+---
 
 ## Access
 
-https://homepage.home.arpa
-
-## Notes
-
-- Published through Nginx Proxy Manager.
-- Secured using the homelab wildcard SSL certificate.
-- Accessible from any trusted device on the local network.
+https://home.home.arpa
 
 ---
 
 ## Change History
 
-### 2026-08-05
+### 2026-08-10
 
 #### Added
 
-- HTTPS support using the wildcard certificate.
+- Backup status widget (custom API)
+- Status icons (🟢 🟡 🔴)
+- Timestamp display for last backup
 
-#### Changed
+#### Verified
 
-- Migrated from a dedicated certificate to the wildcard certificate.
-
-#### Fixed
-
-- Homepage host validation.
-- Subject Alternative Name (SAN) configuration.
-
-### 2026-07-30
-
-#### Added
-
-- Initial Homepage deployment.
-- Homepage dashboard configuration.
+- Widget updates correctly
+- API integration functional
+- Status reflects backup script output
