@@ -166,3 +166,80 @@ Custom services and APIs.
 
 - Live system paths (`/srv/...`) are mapped into this structure
 - Repository reflects **clean configuration**, not raw system state
+
+## Deployment Workflow
+
+### Overview
+
+Defines how configurations are managed between GitHub (source of truth) and the live system (Raspberry Pi).
+
+---
+
+### Workflow Model
+
+
+GitHub → Pi → Runtime
+
+
+- GitHub = clean configuration (source of truth)
+- Pi = deployed configuration
+- Runtime = active services
+
+---
+
+### Standard Workflow
+
+1. Update or create configuration in repository
+2. Commit and push changes to GitHub
+3. Pull changes to the Pi
+4. Apply configuration (restart service or container)
+5. Verify system behavior
+
+---
+
+### Commands
+
+Pull latest changes:
+
+
+git pull
+
+
+Apply changes (example):
+
+
+docker compose down
+docker compose up -d
+
+
+Restart system service (example):
+
+
+sudo systemctl restart backup-api
+
+
+---
+
+### Verification
+
+- Confirm service is running
+- Check logs if needed
+- Validate via UI or API endpoint
+
+---
+
+### Alternative Workflow (Live → Repo Sync)
+
+Used when changes originate on the Pi:
+
+1. Copy updated files from `/srv/...` into repository
+2. Clean file (remove runtime or sensitive data)
+3. Commit and push to GitHub
+
+---
+
+### Notes
+
+- GitHub remains the source of truth
+- Live system should not drift from repository
+- All changes should be reflected back into GitHub
