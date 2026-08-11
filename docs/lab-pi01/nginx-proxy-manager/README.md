@@ -100,3 +100,8 @@ All services are routed through `home.arpa` internal DNS.
 
 - Log path: /srv/nginx-proxy-manager/data/logs/
 - Used for monitoring and fail2ban integration
+
+## Security
+
+- Protected by fail2ban (nginx-auth jail)
+- Monitors access logs for unauthorized requests
