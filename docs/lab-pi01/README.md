@@ -102,7 +102,9 @@ Backup location:
   - Allowed ports: 22, 80, 443, 5055
 
 - fail2ban enabled
-  - Active jail: sshd
+  - Active jails:
+    - sshd
+    - nginx-auth
 
 ## Backup Service
 
