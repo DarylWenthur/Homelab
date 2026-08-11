@@ -102,6 +102,11 @@ Restore:
 
 bash /srv/scripts/automated-backup-lab-pi01.sh
 
+---
+
+## Service
+
+- Backup API running on port 5055
 
 ---
 
