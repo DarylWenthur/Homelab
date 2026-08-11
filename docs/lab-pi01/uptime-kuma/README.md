@@ -2,7 +2,7 @@
 
 **Status:** ✅ Production  
 **Version:** Latest  
-**Last Updated:** 2026-08-07
+**Last Updated:** 2026-08-10  
 
 ---
 
@@ -23,8 +23,38 @@ Uptime Kuma monitors the availability and response time of homelab services.
 - Portainer
 - Nginx Proxy Manager
 - Pi-hole
+- Backup API
 
 All current monitors are reporting **UP**.
+
+---
+
+## Backup Monitoring
+
+### Endpoint
+http://192.168.1.250:5055/api
+
+### Validation
+
+- JSON Query: $.status
+- Expected: 🟢 SUCCESS
+
+
+### Behavior
+
+| Status | Result |
+|--------|--------|
+| 🟢 SUCCESS | UP |
+| 🟡 STALE | DOWN (alert) |
+| 🔴 FAILED | DOWN (alert) |
+
+### Notes
+
+- Backup runs weekly
+- Stale threshold set to 8 days
+- Alerts sent to Discord on failure or stale state
+
+---
 
 ## Configuration Files
 
@@ -32,7 +62,7 @@ All current monitors are reporting **UP**.
 
 ## Access
 
-[https://uptime.home.arpa](https://uptime.home.arpa)
+https://uptime.home.arpa
 
 ## Notes
 
@@ -41,6 +71,21 @@ All monitored services use the homelab `home.arpa` infrastructure.
 ---
 
 ## Change History
+
+### 2026-08-10
+
+#### Added
+
+- Backup API monitoring
+- JSON status validation (`$.status`)
+- Discord alerting for backup failures and stale state
+
+#### Verified
+
+- Backup monitor operational
+- Alerts triggering correctly for FAILED and STALE states
+
+---
 
 ### 2026-08-07
 
