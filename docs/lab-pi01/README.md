@@ -35,6 +35,7 @@ Backup Mount:
 - Nginx Proxy Manager
 - Pi-hole
 - Uptime Kuma
+- TeslaMate
 - Git
 - Curl
 - Wget
@@ -47,12 +48,14 @@ Backup Mount:
 ## Network Services
 
 | Service             | URL                                                        |
-| ------------------- | ---------------------------------------------------------- |
-| Homepage            | [https://homepage.home.arpa](https://homepage.home.arpa)   |
-| Portainer           | [https://portainer.home.arpa](https://portainer.home.arpa) |
-| Nginx Proxy Manager | [https://npm.home.arpa](https://npm.home.arpa)             |
-| Uptime Kuma         | [https://uptime.home.arpa](https://uptime.home.arpa)       |
-| Pi-hole             | [https://pihole.home.arpa](https://pihole.home.arpa)       |
+|---------------------|------------------------------------------------------------|
+| Homepage            | https://homepage.home.arpa                                 |
+| Portainer           | https://portainer.home.arpa                                |
+| Nginx Proxy Manager | https://npm.home.arpa                                      |
+| Uptime Kuma         | https://uptime.home.arpa                                   |
+| Pi-hole             | https://pihole.home.arpa                                   |
+| TeslaMate           | https://teslamate.home.arpa                                |
+| Grafana             | https://grafana.home.arpa                                  |
 
 ## DNS
 
@@ -67,6 +70,8 @@ Configured DNS records include:
 - npm.home.arpa
 - uptime.home.arpa
 - pihole.home.arpa
+- teslamate.home.arpa
+- grafana.home.arpa
 
 Verified:
 
@@ -92,8 +97,6 @@ Nginx Proxy Manager provides reverse proxy services for hosted applications usin
 Backups are stored on the dedicated PNY USB drive.
 
 Backup location:
-
-```text
 /srv/backups/Backups/lab-pi01/
 
 ## Security
